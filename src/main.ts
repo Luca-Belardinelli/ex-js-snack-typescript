@@ -32,8 +32,8 @@ type Dipendente = {
   cognome: string,
   annoNascita: number,
   sesso: 'm' | 'f',
-  anniDiServizio: number[]
-}
+  anniDiServizio: number[],
+};
 
 
 // 🏆 Snack 3
@@ -47,3 +47,16 @@ type Dipendente = {
 // teamSize → Il numero di persone nel team gestito dal Project Manager(può essere null se non ha ancora un team assegnato).
 //   budgetGestito → Il totale del budget annuale gestito dal PM(opzionale).
 //     stakeholderPrincipali → Un array di stringhe con i nomi dei principali stakeholder con cui il PM collabora(può essere vuoto).
+
+
+type Developer = Dipendente & {
+  livelloEsperienza: 'Junior' | 'Mid' | 'Senior',
+  linguaggi?: string[],
+  certificazioni: string[],
+};
+
+type ProjectManager = Dipendente & {
+  teamSize: number | null,
+  budgetGestito?: number,
+  stakeholderPrincipali: string[],
+};
